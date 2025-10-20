@@ -1,0 +1,146 @@
+body
+{
+background-color:rgb(255, 255, 255) ;
+}
+/* Estilos para botones de favorito */
+.fav-btn {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	font-size: 18px;
+	margin-left: 8px;
+}
+.fav-btn.fav-active span {
+	color: red;
+}
+
+.favoritos-list { display:flex; flex-direction:column; gap:8px; }
+.fav-item { display:flex; align-items:center; gap:12px; border:1px solid #eee; padding:8px; border-radius:6px; }
+.fav-item img { border-radius:4px; }
+.fav-actions button { margin-left:6px; }
+
+/* Banner de error de API */
+.api-error {
+	background: #ffdede;
+	color: #900;
+	padding: 8px;
+	margin: 8px 0;
+	border: 1px solid #f5c2c2;
+	border-radius: 4px;
+}
+
+/* Layout general */
+.container { max-width:1100px; margin:0 auto; padding:16px; }
+.site-header { background:#111; color:#fff; padding:12px 0; }
+.site-title { margin:0; font-size:20px; display:inline-block; }
+.main-nav { display:inline-block; margin-left:24px; }
+.main-nav button { margin-right:8px; padding:8px 12px; border-radius:6px; border:none; cursor:pointer; }
+
+/* Lista y tarjetas */
+.c-contenedor-lista { display:grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap:12px; margin-top:12px; }
+.c-lista-pokemon { background:#fff; border:2px solid #7b2cbf; border-radius:8px; padding:12px 8px; text-align:center; box-shadow:0 2px 6px rgba(0,0,0,0.06); min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; }
+.album-card img { border-radius:8px; margin:6px 0; }
+.album-card.not-captured { opacity:0.6; background:linear-gradient(180deg,#fafafa,#fff); border:1px dashed #ccc; }
+.album-card.captured { border:2px solid #6f2fbf; }
+.album-card .muted { color:#444; opacity:0.9; }
+
+/* Animación para cuando un placeholder se convierte en capturado */
+.capture-anim {
+	animation: capturePop 600ms ease forwards;
+}
+
+@keyframes capturePop {
+	0% { transform: scale(0.92); opacity: 0; }
+	60% { transform: scale(1.06); opacity: 1; }
+	100% { transform: scale(1); opacity: 1; }
+}
+.c-lista-pokemon img { max-width:100%; height:auto; display:block; margin:6px auto; }
+.c-buscador { width:100%; padding:10px; border-radius:6px; border:1px solid #ddd; margin-bottom:8px; }
+.tipos-container { display:flex; gap:8px; flex-wrap:wrap; margin:8px 0; }
+.tipos-container button { padding:6px 10px; border-radius:6px; border:1px solid #ddd; background:#fafafa; cursor:pointer; }
+
+/* Centrar buscador y filtros y darles contraste */
+.search-filter-wrap { display:flex; flex-direction:column; align-items:center; gap:8px; }
+.c-buscador { max-width:560px; background:#f7fbff; border:1px solid #2b2b2b; box-shadow:0 2px 6px rgba(13,60,120,0.04); }
+.tipos-container { justify-content:center; background: linear-gradient(90deg, #ffffff, #fbfbff); padding:10px; border-radius:10px; border:1px solid #2b2b2b; box-shadow:0 2px 6px rgba(0,0,0,0.03); }
+.tipos-container button { background:#fff; border:1px solid #d7e7ff; }
+
+/* Hover effect for cards */
+.c-lista-pokemon:hover { transform: translateY(-4px); transition: transform 180ms ease; box-shadow:0 6px 18px rgba(0,0,0,0.12); }
+
+/* Badges por nivel */
+.digi-badge { display:inline-block; padding:4px 8px; border-radius:12px; font-size:12px; color:#fff; margin-bottom:6px; }
+.digi-badge.Fresh { background:#6c757d; }
+.digi-badge.In-Training { background:#17a2b8; }
+.digi-badge.Rookie { background:#28a745; }
+.digi-badge.Champion { background:#ffc107; color:#111; }
+.digi-badge.Ultimate { background:#fd7e14; }
+.digi-badge.Mega { background:#7b2cbf; }
+.digi-badge.Armor { background:#20c997; }
+.digi-badge.Unknown { background:#6c757d; }
+
+.digi-detail-header { display:flex; align-items:center; justify-content:center; gap:12px; }
+
+.favoritos-list { display:flex; flex-direction:column; gap:10px; }
+.fav-item { display:flex; align-items:center; gap:12px; padding:8px; border:1px solid rgba(0,0,0,0.06); border-radius:8px; background:#fff; }
+.fav-thumb { display:flex; flex-direction:column; align-items:center; }
+.fav-info { flex:1; }
+.fav-actions { display:flex; gap:8px; }
+.fav-actions button { background:#6c757d; color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer; }
+.fav-actions button:hover { opacity:0.9; }
+
+/* Caja para cuando no hay favoritos */
+.no-fav-box {
+	background: linear-gradient(180deg, #7b2cbf, #5b1fa6);
+	color: #fff;
+	padding: 22px;
+	border-radius: 12px;
+	text-align: center;
+	box-shadow: 0 8px 22px rgba(123,44,191,0.18);
+	margin: 12px auto;
+	max-width: 720px;
+}
+.no-fav-box p { margin: 0 0 10px 0; font-size: 20px; font-weight: 700; }
+.no-fav-box button { background: #fff; color: #6f2fbf; border: none; padding: 10px 14px; border-radius: 8px; cursor: pointer; font-weight: 700; }
+.no-fav-box button:hover { opacity: 0.95; transform: translateY(-2px); }
+
+/* Detalle */
+.c-detalle { text-align:center; padding:16px; }
+
+/* Sección informativa */
+.info-wrap { max-width:900px; margin:12px auto; padding:18px; background:linear-gradient(180deg,#fff,#fbfbff); border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.06); }
+.info-wrap h2 { margin-top:0; color:#3a1f6b; }
+.info-wrap .lead { font-size:16px; color:#333; margin-bottom:12px; }
+.info-wrap ul { margin-left:18px; }
+.info-actions { margin-top:14px; text-align:right; }
+.info-actions button { background:#6f2fbf; color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }
+.info-actions button:hover { opacity:0.95; transform:translateY(-2px); }
+
+/* Mejoras visuales para la sección informativa */
+.info-wrap { font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height:1.6; }
+.info-wrap h2 { font-size:26px; letter-spacing:0.4px; }
+.info-wrap h3 { color:#4a2a8b; margin-top:14px; }
+.info-wrap p { color:#333; }
+.info-wrap .lead { font-size:15px; color:#3a3a3a; }
+.info-grid { display:grid; grid-template-columns: 1fr 320px; gap:18px; align-items:start; }
+.info-aside { background:linear-gradient(180deg,#fff,#f6f0ff); border-radius:8px; padding:12px; border:1px solid rgba(111,47,191,0.08); }
+.info-aside h4 { margin:6px 0; color:#6f2fbf; }
+.resource-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+.resource-list a { color:#2b1a68; text-decoration:none; font-weight:600; }
+.resource-list a:hover { text-decoration:underline; }
+
+@media (max-width:820px){
+	.info-grid{ grid-template-columns: 1fr; }
+	.info-aside{ order:2 }
+}
+
+/* Capturados */
+.c-lista { display:flex; gap:8px; flex-wrap:wrap; }
+
+/* Favoritos */
+.fav-item { display:flex; align-items:center; gap:12px; border:1px solid #eee; padding:8px; border-radius:6px; }
+
+/* Footer */
+.site-footer { text-align:center; color:#666; padding:12px 0; margin-top:18px; }
+
+

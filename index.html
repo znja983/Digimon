@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DigiDex</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">DigiDex</h1>
+            <nav class="main-nav" aria-label="Main navigation">
+                <button onclick="Home()">Inicio</button>
+                <button onclick="informativa()">Información</button>
+                <button onclick="Capturados()">Capturados</button>
+                <button onclick="Favoritos()">Favoritos</button>
+                <button onclick="Combate()">Combate</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="root">
+            <!-- El contenido dinámico se renderiza aquí -->
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">Hecho con ❤️ — Datos: Digimon API</div>
+    </footer>
+
+    <!-- Cargar scripts en orden correcto y sin duplicados -->
+    <script src="JS/conexion.js"></script>
+    <script src="JS/home.js"></script>
+    <script src="JS/detalle.js"></script>
+    <script src="JS/capturados.js"></script>
+    <script src="JS/favoritos.js"></script>
+    <script src="JS/informativa.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", General)
+    </script>
+</body>
+</html>
